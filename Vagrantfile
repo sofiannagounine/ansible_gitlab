@@ -88,25 +88,25 @@ Vagrant.configure("2") do |config|
     sudo apt-get -y install git python-dev python-pip
 	##sudo pip install --upgrade setuptools pip
 	#installation ansible 
-	sudo echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
-	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-	sudo apt-get update
-	sudo apt-get -y --force-yes install ansible 
-	sudo pip install markupsafe
+    sudo echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+    sudo apt-get update
+    sudo apt-get -y --force-yes install ansible 
+    sudo pip install markupsafe
 	#sudo apt-get install gitlab-ceJ'ai acc
 	#on installe les roles d'ansible dont on a besoin
-	sudo git clone https://github.com/sofiannagounine/ansible_gitlab.git
-	sudo ansible-galaxy install -r requirements.yml
-	cd /etc/ansible/roles
+    sudo git clone https://github.com/sofiannagounine/ansible_gitlab.git
+    sudo ansible-galaxy install -r requirements.yml
+    cd /etc/ansible/roles
 	#On modifie les fichiers inventory (changer le host) et le playbook (modifier le nom gitlab par le nom du host défini dans inventory)
 	#sudo rm -rf geerlingguy.gitlab/
-	sudo git clone https://github.com/sofiannagounine/roles_ansible_gitlab.git
+    sudo git clone https://github.com/sofiannagounine/roles_ansible_gitlab.git
     cd roles_ansible_gitlab/
-	sudo mv gitlab/ ../gitlab/
-	sudo mv firewall/ ../firewall/
-	cd ..
-	sudo rm -rf roles_ansible_gitlab/
-	cd
+    sudo mv gitlab/ ../gitlab/
+    sudo mv firewall/ ../firewall/
+    cd ..
+    sudo rm -rf roles_ansible_gitlab/
+    cd
 
 	#cd ~/ansible-vagrant-examples/gitlab/provisioning
 	#sudo chmod 777 inventory
