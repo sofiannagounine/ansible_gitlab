@@ -93,10 +93,9 @@ Vagrant.configure("2") do |config|
 	sudo apt-get update
 	sudo apt-get -y --force-yes install ansible 
 	sudo pip install markupsafe
-	git clone https://github.com/geerlingguy/ansible-vagrant-examples.git
-	cd ./ansible-vagrant-examples/gitlab/
 	#sudo apt-get install gitlab-ceJ'ai acc
 	#on installe les roles d'ansible dont on a besoin
+	sudo git clone https://github.com/sofiannagounine/ansible_gitlab.git
 	sudo ansible-galaxy install -r requirements.yml
 	cd /etc/ansible/roles
 	#On modifie les fichiers inventory (changer le host) et le playbook (modifier le nom gitlab par le nom du host défini dans inventory)
@@ -108,7 +107,7 @@ Vagrant.configure("2") do |config|
 	cd ..
 	sudo rm -rf roles_ansible_gitlab/
 	cd
-	
+
 	#cd ~/ansible-vagrant-examples/gitlab/provisioning
 	#sudo chmod 777 inventory
 	#sudo echo 'local ansible_connection=local' > inventory
