@@ -64,25 +64,6 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
 
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
-
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
-  
-  
-    # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get -y install git python-dev python-pip
 	#installation ansible
@@ -104,25 +85,9 @@ Vagrant.configure("2") do |config|
     cd ..
     sudo rm -rf roles_ansible_gitlab/
     cd
-	# To play the playbook, type:
-	#ansible-playbook playbook.yml -i inventory -s -v
-	#installation zabbix
-	#sudo apt-get -y install ssh wget man vim build-essential checkinstall
-	#creation d'un utilisateur zabbix
-    #sudo groupadd -g 9000 zabbix
-    #sudo useradd -u 9000 -g zabbix -d /usr/local/zabbix -c "Zabbix User" zabbix
-    #sudo passwd zabbix
-	#installation zabbix server
-	#sudo apt-get -y install mysql-server libmysqlclient15-dev
-	#mot de passe super user a rentrer pour mysql-server
-	#pour avoir accès au fichier de config
-	#sudo vim /etc/zabbix/zabbix_server.conf
-	#installation du frontend
-	#sudo apt-get -y install zabbix-frontend-php	
-    #il faut editer le fichier de conf et modifier la timezone (date.timezone= “Europe/Paris”)
-    #sudo vim /etc/php5/apache2/php.ini
-	#et relancer le serveur
-	#sudo /etc/init.d/apache2 restart 
+    cd ~/ansible_gitlab/provisioning/
+    # To play the playbook, type:
+    #ansible-playbook playbook.yml -i inventory -s -v
   SHELL
 end
 
