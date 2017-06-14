@@ -1,44 +1,46 @@
-# Ansible Vagrant profile for GitLab
+# Ansible Vagrant Examples
 
-## Background
+This repository contains a gitlab. The VM are created via Vagrant and 
 
-Vagrant and VirtualBox (or some other VM provider) can be used to quickly build or rebuild virtual servers.
+provisioned via Ansible.
 
-This Vagrant profile installs [GitLab](https://github.com/gitlabhq/) following the official [GitLab CentOS installation guide](https://github.com/gitlabhq/gitlab-recipes/blob/master/install/centos/README.md) using the [Ansible](http://www.ansible.com/) provisioner.
+You can `cd` into the included directoriy and run `vagrant up`, and a generic 
 
-## Getting Started
+Linux VM will be booted and configured in a few minutes. You just need to 
 
-This README file is inside a folder that contains a `Vagrantfile` (hereafter this folder shall be called the [vagrant_root]), which tells Vagrant how to set up your virtual machine in VirtualBox.
+install [Vagrant](http://vagrantup.com/), [VirtualBox]
 
-To use the vagrant file, you will need to have done the following:
+(https://www.virtualbox.org/), and [Ansible](http://www.ansible.com/). View 
 
-  1. Download and Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-  2. Download and Install [Vagrant](https://www.vagrantup.com/downloads.html)
-  3. Install [Ansible](http://docs.ansible.com/intro_installation.html)
-  4. Open a shell prompt (Terminal app on a Mac) and cd into the folder containing the `Vagrantfile`
-  5. Run the following command to install the necessary Ansible roles for this profile: `$ ansible-galaxy install -r requirements.yml`
+the included README.md file in any of the subdirectories to find out more 
 
-Once all of that is done, you can simply type in `vagrant up`, and Vagrant will create a new VM, install the base box, and configure it.
+about the particular VM.les use a combination of [roles I've added to Ansible 
 
-Once the new VM is up and running (after `vagrant up` is complete and you're back at the command prompt), you can log into it via SSH if you'd like by typing in `vagrant ssh`. Otherwise, the next steps are below.
+Galaxy](https://servercheck.in/blog/using-ansible-galaxy), and were created to 
 
-### Setting up your hosts file
+help demonstrate Ansible's simplicity and flexibility.
 
-You need to modify your host machine's hosts file (Mac/Linux: `/etc/hosts`; Windows: `%systemroot%\system32\drivers\etc\hosts`), adding the line below:
+To know more about Ansible and how to use it to manage infrastructure in 
 
-    192.168.33.22  gitlab
-
-(Where `gitlab`) is the hostname you have configured in the `Vagrantfile`).
-
-After that is configured, you could visit http://gitlab/ in a browser, and you'll see the GitLab home page.
-
-GitLab's default administrator account details are below; be sure to login immediately and change these credentials!
-
-    root
-    5iveL!fe
-
-If you'd like additional assistance editing your hosts file, please read [How do I modify my hosts file?](http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file) from Rackspace.
+[Ansible for DevOpsRuby-based GitHub-like Git web interface)
 
 ## Author Information
 
-Created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+Created in 2017 by [Sofiann Agounine]
+
+Installation:
+
+- After the installation of vagrant (https://www.vagrantup.com/downloads.html) 
+
+and git (https://git-scm.com/download/win) on your computer.
+- You can install the plugin putty of vagrant:	
+	open the command prompt
+	type "vagrant plugin install vagrant-multi-putty"
+- Now, you can clone the repository (git clone 
+
+https://github.com/sofiannagounine/ansible_gitlab.git).
+- With the command prompt go to the directory freshly installed
+- Type: "vagrant up"
+- And: "vagrant putty"
+- You can now access to your debian VM
+ 
