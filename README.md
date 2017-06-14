@@ -24,9 +24,6 @@ To know more about Ansible and how to use it to manage infrastructure in
 
 [Ansible for DevOpsRuby-based GitHub-like Git web interface)
 
-## Author Information
-
-Created in 2017 by [Sofiann Agounine]
 
 Installation:
 
@@ -44,3 +41,6 @@ https://github.com/sofiannagounine/ansible_gitlab.git).
 - And: "vagrant putty"
 - You can now access to your debian VM
  
+# Author Information
+
+created in 2017 by [Sofiann Agounine]
