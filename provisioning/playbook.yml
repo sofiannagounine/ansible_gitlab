@@ -14,3 +14,11 @@
   roles:
     - firewall
     - gitlab
+
+  tasks:
+    - name: gitlab backup
+      cron: minute="20" 
+            hour="10" 
+            name="Gitlab backup"
+            user="root"
+            job="sudo tar -zcvf /etc/gitlab/backups/$(date "+backup-gitlab-\%s.tgz") -C /etc/gitlab"
