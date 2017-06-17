@@ -78,9 +78,6 @@ Vagrant.configure("2") do |config|
     cd /app/deploy
     git clone -b evol/slef https://github.com/silefort/ansible_gitlab.git .
 	
-	## Installation of the needed roles
-    git clone https://github.com/sofiannagounine/roles_ansible_gitlab.git /etc/ansible/roles
-
     cd /app/deploy/provisioning/
     ## To run the playbook, type:
     ansible-playbook playbook.yml -i inventory -b
