@@ -64,28 +64,25 @@ Vagrant.configure("2") do |config|
   # information on available options.
 
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get -y install git python-dev python-pip
-	#installation ansible
-    sudo echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-    sudo apt-get update
-    sudo apt-get -y --force-yes install ansible 
-    sudo pip install markupsafe
-	# Installation project
-    sudo git clone https://github.com/sofiannagounine/ansible_gitlab.git
-    cd ansible_gitlab/
-    sudo ansible-galaxy install -r requirements.yml
-	# Installation of the needed roles
-    cd /etc/ansible/roles
-    sudo git clone https://github.com/sofiannagounine/roles_ansible_gitlab.git
-    cd roles_ansible_gitlab/
-    sudo mv gitlab/ ../gitlab/
-    sudo mv firewall/ ../firewall/
-    cd ..
-    sudo rm -rf roles_ansible_gitlab/
-    cd
-    cd ~/ansible_gitlab/provisioning/
-    # To play the playbook, type:
-    #ansible-playbook playbook.yml -i inventory -s -v
+    # Install Ansible and needed dependencies
+    ## Add Ansible repo to apt sources
+    echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+    apt-get update
+
+    ## Install needed repos
+    apt-get -y install git python-dev python-pip ansible
+
+	# Fetch Gitlab Ansible playbook and associated roles
+	mkdir -p /app/deploy
+    cd /app/deploy
+    git clone https://github.com/sofiannagounine/ansible_gitlab.git .
+	
+	## Installation of the needed roles
+    git clone https://github.com/sofiannagounine/roles_ansible_gitlab.git /etc/ansible/roles
+
+    cd /app/deploy/provisioning/
+    ## To run the playbook, type:
+    ansible-playbook playbook.yml -i inventory -b
   SHELL
 end
