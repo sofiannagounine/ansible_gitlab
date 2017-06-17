@@ -6,9 +6,9 @@ This repository contains a gitlab full installation. VMs are created using Vagra
 
 ## Install Git, Vagrant, VirtualBox
 
-[Vagrant](http://vagrantup.com/)
-[VirtualBox](https://www.virtualbox.org/) 
-[Git](https://git-scm.com/download/win)
+* [Vagrant](http://vagrantup.com/)
+* [VirtualBox](https://www.virtualbox.org/) 
+* [Git](https://git-scm.com/download/win)
 
 ## Install the 'putty' plugin to emulate the unix `vagrant ssh` command
 
@@ -18,7 +18,7 @@ This repository contains a gitlab full installation. VMs are created using Vagra
 
 Clone this repo
 
-        git clone https://github.com/silefort/ansible_gitlab.git
+        git clone -b evol/slef https://github.com/silefort/ansible_gitlab.git
 
 Run the VM
 
