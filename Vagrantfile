@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
 	# Fetch Gitlab Ansible playbook and associated roles
 	mkdir -p /app/deploy
     cd /app/deploy
-    git clone https://github.com/sofiannagounine/ansible_gitlab.git .
+    git clone -b evol/slef https://github.com/silefort/ansible_gitlab.git .
 	
 	## Installation of the needed roles
     git clone https://github.com/sofiannagounine/roles_ansible_gitlab.git /etc/ansible/roles
