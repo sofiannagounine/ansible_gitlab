@@ -71,8 +71,8 @@ Vagrant.configure("2") do |config|
     sudo apt-get update
 
     ## Install needed repos
-    sudo apt-get -y install git python-dev python-pip ansible
-
+    sudo apt-get -y install git python-dev python-pip 
+	sudo apt-get -y --force-yes install ansible 
 	# Fetch Gitlab Ansible playbook and associated roles
 	mkdir -p /app/deploy
     cd /app/deploy
