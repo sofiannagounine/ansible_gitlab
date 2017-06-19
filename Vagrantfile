@@ -66,17 +66,17 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     # Install Ansible and needed dependencies
     ## Add Ansible repo to apt sources
-    echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-    apt-get update
+    sudo echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+    sudo apt-get update
 
     ## Install needed repos
-    apt-get -y install git python-dev python-pip ansible
+    sudo apt-get -y install git python-dev python-pip ansible
 
 	# Fetch Gitlab Ansible playbook and associated roles
 	mkdir -p /app/deploy
     cd /app/deploy
-    git clone -b evol/slef https://github.com/silefort/ansible_gitlab.git .
+    sudo git clone -b evol/slef https://github.com/silefort/ansible_gitlab.git .
 	
     cd /app/deploy/provisioning/
     ## To run the playbook, type:
