@@ -72,9 +72,9 @@ Vagrant.configure("2") do |config|
 
     ## Install needed repos
     sudo apt-get -y install git python-dev python-pip 
-	sudo apt-get -y --force-yes install ansible 
-	# Fetch Gitlab Ansible playbook and associated roles
-	mkdir -p /app/deploy
+    sudo apt-get -y --force-yes install ansible 
+    # Fetch Gitlab Ansible playbook and associated roles
+    mkdir -p /app/deploy
     cd /app/deploy
     sudo git clone -b evol/slef https://github.com/silefort/ansible_gitlab.git .
 	
