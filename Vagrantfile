@@ -80,6 +80,6 @@ Vagrant.configure("2") do |config|
 	
     cd /app/deploy/provisioning/
     ## To run the playbook, type:
-    ansible-playbook playbook.yml -i inventory -b
+    # sudo ansible-playbook playbook.yml -i inventory -b -v --ask-pass
   SHELL
 end

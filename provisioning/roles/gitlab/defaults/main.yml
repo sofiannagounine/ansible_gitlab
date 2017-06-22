@@ -1,11 +1,11 @@
 ---
 # General config.
-gitlab_external_url: "https://gitlab/"
+gitlab_external_url: "https://cos-srv-git.canal-overseas.com/"
 gitlab_git_data_dir: "/var/opt/gitlab/git-data"
 gitlab_edition: "gitlab-ce"
 
 # SSL Configuration.
-gitlab_redirect_http_to_https: "true"
+gitlab_redirect_http_to_https: "false"
 gitlab_ssl_certificate: "/etc/gitlab/ssl/gitlab.crt"
 gitlab_ssl_certificate_key: "/etc/gitlab/ssl/gitlab.key"
 
