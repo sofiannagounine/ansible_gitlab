@@ -25,7 +25,7 @@
   when: (gitlab_file.stat.exists == false)
 
 - name: Install GitLab repository
-  command: bash /tmp/gitlab_install_repository.sh
+  command: sudo bash /tmp/gitlab_install_repository.sh
   when: (gitlab_file.stat.exists == false)
 
 - name: Install GitLab
